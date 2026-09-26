@@ -1,0 +1,120 @@
+:root {
+  --card-width: 1167px;
+  --card-gap: 53px;
+  --card-height: 513px;
+  --content-range: -674px;
+}
+
+#container {
+  position: fixed;
+  bottom: 15px;
+  right: -1115px;
+  width: calc(var(--card-width) + (var(--card-gap) * 3));
+  height: var(--card-height);
+}
+
+/* header adjustment */
+img[class*="h"] {
+  width: 31px;
+  height: auto;
+  position: absolute;
+  top: 38px;
+  left: 22px;
+  pointer-events: none;
+}
+
+/* clickable area */
+.interact {
+  width: 60px;
+  height: 276px;
+  margin: 25px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+  z-index: 10;
+  /* background-color: cyan */
+}
+
+div[class*="sec_"] {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: var(--card-width);
+  height: var(--card-height);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+div[class*="sec_"].active .content {
+  opacity: 1;
+}
+
+.sec_1 {
+  z-index: 1;
+  left: 0;
+  background-image: url('../res/a/card.png');
+}
+.sec_2 {
+  z-index: 2;
+  left: var(--card-gap);
+  background-image: url('../res/a/card.png');
+}
+.sec_3 {
+  z-index: 4;
+  left: calc(var(--card-gap) * 2);
+  background-image: url('../res/a/card_b.png');
+}
+.sec_4 {
+  z-index: 5;
+  left: calc(var(--card-gap) * 3);
+  background-image: url('../res/a/card.png');
+}
+
+.sec_1.active { transform: translateX(var(--content-range)); }
+.sec_2.active { transform: translateX(var(--content-range)); }
+.sec_3.active { transform: translateX(var(--content-range)); }
+
+div[class*="inner_"] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+}
+.inner_plate {
+  background-image: url('../res/a/inner.png');
+  height: 180px;
+  position: absolute;
+  left: -104px;
+  bottom: 20px;
+  z-index: -1;
+}
+.inner_img {
+  background-image: url('../res/croppedimg.png');
+  height: 130px;
+  position: relative;
+  left: 0;
+  bottom: 30px;
+  z-index: 0;
+}
+.inner_bank {
+  background-image: url('../res/son.png');
+  height: 92px;
+  position: absolute;
+  left: -271px;
+}
+.inner_signature {
+  background-image: url('../res/sig.png');
+  height: 70px;
+  position: absolute;
+}
+
+.zoom {
+  position: relative;
+  left: 3px;
+  bottom: 26px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 1;
+  /* background-color: cyan */
+}

@@ -1,0 +1,110 @@
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #F5F3ED;
+  /* cursor: none; */
+}
+
+/* =============  VERY IMPORTANT  ===============*/
+/* =============   ZOOM OVERLAY   ===============*/
+.lightbox_overlay {
+  position: fixed;
+  /* stay in the character */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  /* adjust bg's color while zooming */
+  z-index: 999;
+  /* always on top*/
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  /* might fix this later */
+  opacity: 0;
+  /* does not display while inactive */
+  visibility: hidden;
+  /* no interaction till it shows up */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox_overlay.active {
+  opacity: 1;
+  /* display detailed process img */
+  visibility: visible;
+  /* enable interaction */
+}
+
+/* =============   CLOSE THE SHIT   ===============*/
+.lightbox_close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  width: auto;
+  height: 32px;
+  /* button size adjustment */
+  display: flex;
+  cursor: pointer;
+  z-index: 100000;
+  transition: color 0.2s ease, transform 0.2s ease;
+  /* background-color: cyan; */
+}
+
+.lightbox_close:hover {
+  transform: rotate(90deg);
+}
+
+/* ===============  ZOOM AREA  ================*/
+.lightbox_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.lightbox_wrapper:active {
+  cursor: grabbing;
+}
+
+/* ================  DISPLAY IMAGE  ================*/
+#lightbox_img {
+  max-width: 90%;
+  object-fit: contain;
+  transform-origin: center center;
+  transition: transform 0.08s ease-out;
+}
+
+.lightbox_overlay #lightbox_img {
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.lightbox_overlay.active #lightbox_img {
+  transform: scale(1);
+}
+
+/* #cursor {
+  background-image: url('../res/svg/select.svg');
+  width: 14px;
+  height: 19px;
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  z-index: 999999;
+} */
