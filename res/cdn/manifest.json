@@ -1,4 +1,5 @@
 [
-  "p0.png",
-  "p1.png"
+  { "img": "p0.png", "color": "#000000", "style": 0 },
+  { "img": "p1.png", "color": "#6b9aa5", "style": 1 },
+  { "img": "p2.png", "color": "#0d101d", "style": 0 }
 ]
