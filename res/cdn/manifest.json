@@ -1,5 +1,38 @@
 [
-  { "img": "p0.png", "color": "#000000", "style": 0 },
-  { "img": "p1.png", "color": "#6b9aa5", "style": 1 },
-  { "img": "p2.png", "color": "#0d101d", "style": 0 }
+  {
+    "img": "p0.png",
+    "color": "#18121d",
+    "style": 0,
+    "author": {
+      "name": "ProjectMoon",
+      "url": "https://x.com/LimbusCompany_B"
+    }
+  },
+  {
+    "img": "p1.png",
+    "color": "#33313c",
+    "style": 1,
+    "author": {
+      "name": "ProjectMoon",
+      "url": "https://x.com/LimbusCompany_B"
+    }
+  },
+  {
+    "img": "p2.png",
+    "color": "#0d101d",
+    "style": 0,
+    "author": {
+      "name": "ProjectMoon",
+      "url": "https://x.com/LimbusCompany_B"
+    }
+  },
+  {
+    "img": "p3.png",
+    "color": "#6b9aa5",
+    "style": 1,
+    "author": {
+      "name": "Asusasuki🐰",
+      "url": "https://x.com/asusasuki27"
+    }
+  }
 ]
